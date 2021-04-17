@@ -21,7 +21,7 @@ const observer = {
 };
 
 // Rx.Observable.fromEvent(button2, 'click')
-Rx.Observable.create((obs) => {
+const subscription = Rx.Observable.create((obs) => {
     // button2.addEventListener('click', (event) => obs.next(event));
     obs.next('A value');
     obs.error('Error');
@@ -29,3 +29,4 @@ Rx.Observable.create((obs) => {
 })
     .subscribe(observer);
 
+subscription.unsubscribe();
