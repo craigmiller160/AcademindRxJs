@@ -5,6 +5,7 @@ const button = document.querySelector('button');
 
 Rx.Observable.fromEvent(button, 'click')
     .throttleTime(1000)
+    .map((event) => event.target)
     .subscribe(
-        (event) => console.log(event)
+        (target) => console.log(target)
     );
